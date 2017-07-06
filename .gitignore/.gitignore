@@ -1,110 +1,32 @@
-#include<iostream>
-//Coen 70 HW 7 Jordan Lai
-//For this assignment, I have derived an AVL from the bst class below
-//Just like the Bst class, inserting and deleting nodes are essentially the same.
-//The only difference is the fix function exclusive to the avl tree that
-//balances the tree accordingly after every insert/delete. 
-using namespace std;
+# Prerequisites
+*.d
 
-class bst{
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
 
-public:
-	
-	bst();
-	~bst();
-	int getsize();
+# Precompiled Headers
+*.gch
+*.pch
 
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
 
-	class node{
-	public:
-		node(int x, node* q, node* r, node*s);
-		node* parent;
-		node* lc;
-		node* rc;
-		int data;
-	};
-	void insert(int x, node*&p);
-	void dlete(int x, node*&p);
-	node findmax(node*&p);
-protected:
-	int size;
-	node* root;
+# Fortran module files
+*.mod
+*.smod
 
-};
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
 
-class avl:public bst{
-
-	public:
-	avl();
-	~avl();
-	void insert(int x, node*&p);
-	void remove(int x, node*&p);
-	void sort(node*&p);	
-
-};
-bst::bst(){
-	root=NULL;
-	size=0;
-}
-
-bst::node::node(int x, node* q, node* r, node* s){
-	data=x;
-	lc=q;
-	rc=r;
-	parent=s;
-}
-void bst::insert(int x, node*&p){
-	node* temp=root;
-	if(p==NULL)
-		p=new node(x, NULL, NULL, root);
-		size++;
-	if(x>p->data)
-		insert(x,p->rc);
-	if(x<p->data)
-		insert(x,p->lc);
-	return;
-}
-
-node bst::findmax(node*&p){
-	node*& temp=p
-	while(temp->rc!=NULL){
-	temp=temp->rc;
-	}
-	return temp;
-}
-void bst::dlete(int x, node*&p){
-	node* temp=p;
-	if(p->data>x)
-		dlete(int x,p->lc);
-	else if(p->data<x)
-		dlete(p->rc);
-		p=find max(p->lc);
-		dlete(p->data,p->lc);
-	else
-		p=(p->lc!=NULL)? p->lc:p->rc;
-		delete temp;
-
-}
-
-avl::avl(){
-	root=NULL;
-	size=0;
-
-}
-
-void avl::insert(int x,node*&p){
-	
-	void bst::insert(x, p);
-	sort(node*&p);
-
-}
-void avl::dlete(int x,node*&p){
-	
-	void bst::dlete(x, p);
-	sort(node*&p);
-}
-
-int main(){
-return 0;
-
-}
+# Executables
+*.exe
+*.out
+*.app
